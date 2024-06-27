@@ -1,0 +1,223 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap");
+
+:root {
+  --md-sys-color-primary: rgb(255 179 173);
+  --md-sys-color-surface-tint: rgb(255 179 173);
+  --md-sys-color-on-primary: rgb(104 0 10);
+  --md-sys-color-primary-container: rgb(218 54 55);
+  --md-sys-color-on-primary-container: rgb(255 255 255);
+  --md-sys-color-secondary: rgb(255 179 173);
+  --md-sys-color-on-secondary: rgb(97 18 18);
+  --md-sys-color-secondary-container: rgb(118 34 32);
+  --md-sys-color-on-secondary-container: rgb(255 200 195);
+  --md-sys-color-tertiary: rgb(255 184 104);
+  --md-sys-color-on-tertiary: rgb(72 41 0);
+  --md-sys-color-tertiary-container: rgb(165 101 0);
+  --md-sys-color-on-tertiary-container: rgb(255 255 255);
+  --md-sys-color-error: rgb(255 180 171);
+  --md-sys-color-on-error: rgb(105 0 5);
+  --md-sys-color-error-container: rgb(147 0 10);
+  --md-sys-color-on-error-container: rgb(255 218 214);
+  --md-sys-color-background: rgb(30 16 14);
+  --md-sys-color-on-background: rgb(249 220 217);
+  --md-sys-color-surface: rgb(30 16 14);
+  --md-sys-color-on-surface: rgb(249 220 217);
+  --md-sys-color-surface-variant: rgb(91 64 62);
+  --md-sys-color-on-surface-variant: rgb(228 190 186);
+  --md-sys-color-outline: rgb(170 137 134);
+  --md-sys-color-outline-variant: rgb(91 64 62);
+  --md-sys-color-shadow: rgb(0 0 0);
+  --md-sys-color-scrim: rgb(0 0 0);
+  --md-sys-color-inverse-surface: rgb(249 220 217);
+  --md-sys-color-inverse-on-surface: rgb(62 44 43);
+  --md-sys-color-inverse-primary: rgb(185 28 36);
+  --md-sys-color-primary-fixed: rgb(255 218 215);
+  --md-sys-color-on-primary-fixed: rgb(65 0 4);
+  --md-sys-color-primary-fixed-dim: rgb(255 179 173);
+  --md-sys-color-on-primary-fixed-variant: rgb(147 0 19);
+  --md-sys-color-secondary-fixed: rgb(255 218 215);
+  --md-sys-color-on-secondary-fixed: rgb(65 0 4);
+  --md-sys-color-secondary-fixed-dim: rgb(255 179 173);
+  --md-sys-color-on-secondary-fixed-variant: rgb(127 41 38);
+  --md-sys-color-tertiary-fixed: rgb(255 221 187);
+  --md-sys-color-on-tertiary-fixed: rgb(43 23 0);
+  --md-sys-color-tertiary-fixed-dim: rgb(255 184 104);
+  --md-sys-color-on-tertiary-fixed-variant: rgb(103 61 0);
+  --md-sys-color-surface-dim: rgb(30 16 14);
+  --md-sys-color-surface-bright: rgb(71 53 51);
+  --md-sys-color-surface-container-lowest: rgb(24 10 9);
+  --md-sys-color-surface-container-low: rgb(39 24 22);
+  --md-sys-color-surface-container: rgb(43 28 26);
+  --md-sys-color-surface-container-high: rgb(55 38 36);
+  --md-sys-color-surface-container-highest: rgb(66 48 47);
+}
+
+::selection {
+  background-color: var(--md-sys-color-primary);
+  color: rgb(255, 255, 255);
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: "Roboto Mono", sans-serif;
+  background-color: var(--md-sys-color-background);
+  color: rgb(255, 255, 255);
+  min-height: 100vh;
+  width: 100%;
+  overflow: overlay;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 4rem;
+  padding: 20px;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+
+}
+
+.add-form {
+  display: flex;
+  background-color: var(--md-sys-color-surface-container);
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: 100%;
+  padding: 20px;
+}
+
+.add-form select {
+  width: 200px;
+  height: 40px;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+
+}
+
+.add-form input {
+  width: 200px;
+  padding-left: 20px;
+  height: 40px;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+}
+
+.add-form input[type='submit'] {
+  background-color: var(--md-sys-color-inverse-primary);
+  color: rgb(255, 255, 255);
+  width: 100px !important;
+  padding: 0;
+  transition: 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.add-form input[type='submit']:active {
+  transform: scale(0.9);
+}
+
+.packingList {
+  width: 100%;
+  min-height: 71vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.list li {
+  list-style: none;
+  background-color: var(--md-sys-color-surface-container);
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+}
+
+.list button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.list button:active {
+  transform: scale(0.8);
+}
+
+.btns {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btns button,
+.btns select {
+  width: 200px;
+  height: 40px;
+  background-color: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 500;
+  outline: none;
+  border: none;
+}
+
+.btns button {
+  cursor: pointer;
+  transition: 0.2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.btns button:active {
+  transform: scale(0.9);
+}
+
+footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--md-sys-color-on-secondary-fixed-variant);
+  padding: 20px;
+  color: rgb(255, 255, 255);
+  margin-top: 10px;
+}
