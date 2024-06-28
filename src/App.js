@@ -16,11 +16,15 @@ function App() {
     setItems(i=> i.map(item=> item.id===id? {...item, packed: !item.packed}: item));
   }
 
+  function clearList(){
+    const confirm = window.confirm('Are you sure you want to clear the list?');
+    confirm && setItems([]);
+  }
   return (
     <>
       <Logo />
       <Form itemAdd={itemAddHandle} />
-      <PackingList items={items} itemDelete={itemDeleteHandle} itemToggle={itemToggleHandle}/>
+      <PackingList items={items} itemDelete={itemDeleteHandle} itemToggle={itemToggleHandle} clear={clearList}/>
       <Stats items={items}/>
     </>
   );
@@ -68,7 +72,7 @@ function Form({itemAdd}) {
   );
 }
 
-function PackingList({items , itemDelete, itemToggle}) {
+function PackingList({items , itemDelete, itemToggle, clear}) {
   const [sort, setSort] = useState('input');
 
   let sortedItems;
@@ -93,7 +97,7 @@ function PackingList({items , itemDelete, itemToggle}) {
           <option value='description'>Sort by description</option>
           <option value='packed'>Sort by packed items</option>
         </select>
-        <button>Clear List</button>
+        <button onClick={()=>clear()}>Clear List</button>
       </div>
     </div>
   );
