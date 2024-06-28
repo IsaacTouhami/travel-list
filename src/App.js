@@ -69,18 +69,29 @@ function Form({itemAdd}) {
 }
 
 function PackingList({items , itemDelete, itemToggle}) {
+  const [sort, setSort] = useState('input');
+
+  let sortedItems;
+  if(sort === 'description'){
+    sortedItems = [...items].sort((a,b)=> a.name.localeCompare(b.name));
+  } else if(sort === 'packed'){
+    sortedItems = [...items].sort((a,b)=> b.packed - a.packed);
+  } else {
+    sortedItems = items;
+  }
+  
   return (
     <div className="packingList">
       <ul className="list">
-        {items.map((item) => (
+        {sortedItems.map((item) => (
           <Item item={item} itemDelete={itemDelete} itemToggle={itemToggle} key={item.id} />
         ))}
       </ul>
       <div className="btns">
-        <select>
-          <option></option>
-          <option></option>
-          <option></option>
+        <select value={sort} onChange={(e)=>setSort(e.target.value)}>
+          <option value='input'>Sort by input order</option>
+          <option value='description'>Sort by description</option>
+          <option value='packed'>Sort by packed items</option>
         </select>
         <button>Clear List</button>
       </div>
